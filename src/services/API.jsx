@@ -8,5 +8,6 @@ export const getModesAPI = async () => {
         return response.data;
     } catch (error) {
         console.error('Error fetching modes:', error);
+        throw error;
     }
 };

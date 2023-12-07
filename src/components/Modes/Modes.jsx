@@ -1,38 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import { getModesAPI } from '../../services/API';
-import s from './Modes.module.scss';
+import { Form, Select, Option, StartButton } from './Modes.styled';
 
 export const Modes = ({ onSelectMode }) => {
-    const [modes, setModes] = useState([]);
-    const [selectedOption, setSelectedOption] = useState('');
 
-    useEffect(() => {
-        getModesAPI()
-            .then(data => setModes(data))
-            .catch(error => console.error('Error fetching modes:', error));
-    }, []);
+  const [modes, setModes] = useState([]);
+  const [selectedOption, setSelectedOption] = useState('');
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const selectedMode = modes.find(mode => mode.name === selectedOption);
-        onSelectMode(selectedMode);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getModesAPI();
+        setModes(data);
+      } catch (error) {
+        console.error('Error in Modes component:', error);
+      }
     };
+    fetchData();
+  }, []);
 
-    const handleSelectChange = (event) => {
-        setSelectedOption(event.target.value);
-    };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const selectedMode = modes.find((mode) => mode.name === selectedOption);
+    onSelectMode(selectedMode);
+  };
 
-    return (
-        <form className={s.form} onSubmit={handleSubmit}>
-            <select className={s.selectedOption} value={selectedOption} onChange={handleSelectChange}>
-                <option value="" disabled>Pick mode</option>
-            {modes.map(mode => (
-                <option key={mode.name} value={mode.name}>
-                    {mode.name}
-                </option>
-            ))}
-            </select>
-            <button className={s.start} type="submit">Start</button>
-        </form>
-    );
+  const handleSelectChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+  return (
+    <Form onSubmit={handleSubmit}>
+      <Select value={selectedOption} onChange={handleSelectChange}>
+        <Option value="" disabled>Pick mode</Option>
+        {modes.map((mode) => (
+          <Option key={mode.name} value={mode.name}>
+            {mode.name}
+          </Option>
+        ))}
+      </Select>
+      <StartButton type="submit">Start</StartButton>
+    </Form>
+  );
 };

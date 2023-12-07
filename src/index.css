@@ -8,8 +8,8 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 
+  'Courier New', monospace;
 }
 
 html {
@@ -42,7 +42,7 @@ a {
 }
 
 button {
-  font-family: 'Poppins-Medium';
+  font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
   outline: none;
