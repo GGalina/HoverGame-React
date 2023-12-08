@@ -4,8 +4,9 @@ export const MainContainer = styled.div`
     display: flex;
     justify-content: ${(props) => props.gridsize <= 20 ? 'baseline' : 'space-between'};
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     padding: 30px;
+    max-width: 100%;
 `;
 
 export const GridContainer = styled.div`
