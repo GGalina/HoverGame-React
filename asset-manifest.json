@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/HoverGame-React/static/css/main.39e2a324.css",
-    "main.js": "/HoverGame-React/static/js/main.bad2511a.js",
+    "main.js": "/HoverGame-React/static/js/main.d44e2a98.js",
     "index.html": "/HoverGame-React/index.html",
     "main.39e2a324.css.map": "/HoverGame-React/static/css/main.39e2a324.css.map",
-    "main.bad2511a.js.map": "/HoverGame-React/static/js/main.bad2511a.js.map"
+    "main.d44e2a98.js.map": "/HoverGame-React/static/js/main.d44e2a98.js.map"
   },
   "entrypoints": [
     "static/css/main.39e2a324.css",
-    "static/js/main.bad2511a.js"
+    "static/js/main.d44e2a98.js"
   ]
 }
