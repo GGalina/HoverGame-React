@@ -2,7 +2,7 @@
 
 Welcome to the HoverGame-React test task!
 
-Live Demo: [SmartPhoneBook-React](https://ggalina.github.io/SmartPhoneBook-React/)
+Live Demo: [SmartPhoneBook-React](https://ggalina.github.io/HoverGame-React/)
 
 ## Getting Started
 

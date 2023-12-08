@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { StyleSheetManager } from 'styled-components';
 import { Square } from '../Square/Square';
 import { Modes } from '../Modes/Modes';
 import { Info } from '../Info/Info';
@@ -34,12 +35,14 @@ export const Home = () => {
   };
 
   return (
-  <MainContainer>
-    <GridContainer>
-      <Modes onSelectMode={handleSelectMode} />
-      <Square onHover={handleSquareHover} gridSize={gridSize} hoveredSquares={hoveredSquares} squareStates={squareStates} />
-    </GridContainer>
+    <StyleSheetManager shouldForwardProp={(prop) => prop !== 'gridsize'}>
+      <MainContainer gridsize={gridSize}>
+        <GridContainer>
+          <Modes onSelectMode={handleSelectMode} />
+          <Square onHover={handleSquareHover} gridSize={gridSize} hoveredSquares={hoveredSquares} squareStates={squareStates} />
+        </GridContainer>
         <Info hoveredSquares={hoveredSquares}/>
-  </MainContainer>
+      </MainContainer>
+    </StyleSheetManager>
   );
 };
